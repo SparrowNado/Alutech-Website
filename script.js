@@ -177,12 +177,12 @@
 
 // Function to update temperature display
 function updateTemperature(data) {
-    document.getElementById('temperatureDisplay').innerText = 'Temperature: ' + data + ' °C';
+    document.getElementById('temperatureDisplay').innerText =   data + ' °C';
 }
 
 // Function to update hydrogen concentration display
 function updateHydrogen(data) {
-    document.getElementById('HydroDisplay').innerText = 'Hydrogen Concentration: ' + data + ' Nm3';
+    document.getElementById('HydroDisplay').innerText =  data + ' ppm';
 }
 
 // Function to process serial data and update displays
