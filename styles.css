@@ -248,9 +248,9 @@ border-bottom-right-radius: 100px;  */
   color: #436850;
   display: block;
   transition: 0.2s;
-  margin-bottom: 230px;
-  border-top: 100px;
-  border-bottom: 100px;
+   margin-bottom: 100px; 
+   border-top: 100px; 
+   border-bottom: 100px; 
   border-color: #436850;
   
   
