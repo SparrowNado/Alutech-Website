@@ -3,22 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/ICONTECH.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
-    <title>Arduino Temperature Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <title>ALU-TECH Monitoring Dashboard</title>
 </head>
 <body>
-    <br><br><br><br><br><br>
-    <br><br><br><br><br><br>
-    <br><br>
-    
-    <div class="container">
-        <h1>Temperature Dashboard</h1>
-        <div id="temperatureDisplay">Loading...</div>
-        <h1>Hydrogen Concentration</h1>
-        <div id="HydroDisplay" class="hydro">Loading...</div>
-        <button id="connectButton">Connect to Arduino</button>
-    </div>
 
-    <script src="script.js"></script>
+<div class="splash">
+    <div class="titlecontainer">
+        <!-- ALU-TECH -->
+
+        <img src="/logonew2.png" style="width: auto; height:500px;" alt="">
+      
+    </div>
+</div>
+
+<div class="container">
+    <div class="left">
+        <img src="/temp.png" alt=" " class="temp">
+        <h1 style="font-size: 32px;">Current Temperature</h1>
+        <div id="temperatureDisplay">Waiting for Connection</div>
+    </div>
+    <div class="right">
+        <img src="/hydro.png" alt=" " class="concentration">
+        <h1>Hydrogen Concentration</h1>
+        <div id="HydroDisplay" class="hydro">Waiting for Connection</div>
+    </div>
+</div>
+
+<div class="buttoncontainer">
+    <button id="connectButton" class="button-80" onclick="connectToArduino()">Connect to Arduino
+        <br>
+        <img src="/connect.png" alt="connectionpic" class="connecticon">
+    </button>
+</div>
+
+<div class="sidenav-button">
+    <a  onclick="openNav()"> <img src="/burger.png" alt="" style="height: 50px; cursor:pointer"></a>
+</div>
+
+<div class="sidenav" id="mySidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="/left.png" style="height: 30px; padding-right:50px" alt=""></a>
+   <br><br>
+   <br><br>
+   <br><br>
+    <a href="/index.html"><img src="/home.png" style="height: 50px; display:flex ; padding-left:8px;">Home</a>
+    <a href="/about.html    "><img src="/about.png" style="height: 50px; display:flex ; padding-left:8px;">About</a>
+    <a href="/specs.html" style="padding-bottom:20px"><img src="/specs2.png"     style="height: 50px; display:flex ; padding-left:8px; padding-right: 8px; ">Specs</a>
+</div>
+
+<script src="script.js"></script>
+<script src="splash.js"></script>
+<script src="sidenav.js"></script>
+
+<section class="sticky">
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+</section>
+
 </body>
 </html>

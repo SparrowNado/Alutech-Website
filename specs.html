@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/ICONTECH.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" href="style4.css">
+   
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <title>ALU-TECH Monitoring Dashboard</title>
+</head>
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     
+    <div class="container">
+
+        <div class="slide">
+
+            
+            <div class="item" style="background-image: url('arduino.avif');">
+
+                <div class="content">
+                    <div class="name">Arduino Uno</div>
+                    <div class="des">The Arduino Uno is a versatile microcontroller board with digital and analog pins, perfect for electronics projects.</div>
+                    <!-- <button>See More</button> -->
+                </div>
+            </div>
+            <div class="item" style="background-image: url('tempsensor.jpg'); background-size:cover ; background-repeat:no-repeat">
+                <div class="content">
+                    <div class="name">DS18B20 Temperature Sensor</div>
+                    <div class="des">The DS18B20 sensor provides accurate temperature readings and is easily integrated into Arduino projects.</div>
+                    <!-- <button>See More</button> -->
+                </div>
+            </div>
+            <div class="item" style="background-image: url('mq8.jpg');">
+                <div class="content">
+                    <div class="name">MQ8 Gas Sensor</div>
+                    <div class="des"> The MQ8 sensor detects hydrogen gas concentrations, making it ideal for gas leakage detection and safety applications.</div>
+                    <!-- <button>See More</button> -->
+                </div>
+            </div>
+            <div class="item" style="background-image: url('piezzo.jpg');">
+                <div class="content">
+                    <div class="name">Piezzo Buzzer</div>
+                    <div class="des">The piezo buzzer is an electronic device that generates sound when an electrical signal is applied, commonly used in alarm systems and interactive projects.</div>
+                    <!-- <button>See More</button> -->
+                </div>
+            </div>
+            <div class="item" style="background-image: url('stirlingreal.jpg');">
+                <div class="content">
+                    <div class="name">Stirling Engine</div>
+                    <div class="des">Stirling engine is a highly efficient heat engine with applications in power generation and heating systems.</div>
+                    <!-- <button>See More</button> -->
+                </div>
+            </div>
+          
+
+        </div>
+
+        <div class="button">
+            <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+            <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+    </div>
+
+ 
+      
+   
+
+    <div class="sidenav-button">
+        <a onclick="openNav()"> <img src="/burger.png" alt="" style="height: 50px; cursor:pointer"></a>
+    </div>
+
+    <div class="sidenav" id="mySidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="/left.png" style="height: 30px; padding-right:50px" alt=""></a>
+        <br><br>
+        <br><br>
+        <br><br>
+        <a href="/index.html"><img src="/home.png" style="height: 50px; display:flex ; padding-left:8px;">Home</a>
+        <a href="/about.html    "><img src="/about.png" style="height: 50px; display:flex ; padding-left:8px;">About</a>
+        <a href="/specs.html" style="padding-bottom:20px"><img src="/specs2.png"     style="height: 50px; display:flex ; padding-left:8px; padding-right: 8px; ">Specs</a>
+    </div>
+
+    <script src="sidenav.js"></script>
+    <script src="specs.js"> </script>
+   
+</body>
+</html>

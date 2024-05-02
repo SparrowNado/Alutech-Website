@@ -1,42 +1,297 @@
+/* Your existing CSS styles here */
+
+*{
+  font-family: "Roboto Slab", serif;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #222831;
-    height: 100vh;
+
+  margin: 0;
+  padding: 0;
+  background-color: #436850;
+  height: 100vh;
+  overflow: hidden; /* Hide scrollbars */
+
+}
+
+.splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #436850;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.splash.fade-out {
+  opacity: 0;
+  z-index: 0;
+}
+
+.titlecontainer {
+  font-size: 100px;
+  font-family: "Roboto Slab", serif;
+  color: #FBFADA;
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.titlecontainer.fade-out {
+  opacity: 0; /* Start fading out */
+  transform: translateY(-100%); /* Move the element upward */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* Apply transition */
 }
 
 .container {
-    max-width: 600px;
-    margin: 50px auto;
-    text-align: center;
-    background-color: #393E46;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #FBFADA;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+}
+
+.container .left,
+.container .right {
+  flex-basis: 45%;
+  text-align: center;
 }
 
 .container h1 {
-    color: #00ADB5;
+  color: #436850;
 }
 
-#temperatureDisplay {
-    font-size: 36px;
-    margin-top: 20px;
-    color: #EEEEEE;
-}
-
-
+#temperatureDisplay,
 #HydroDisplay {
-    font-size: 36px;
-    margin-top: 20px;
-    color: #EEEEEE;
+  font-size: 24px;
+  margin-top: 20px;
+  color: #436850;
+}
+
+.temp,
+.concentration {
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.buttoncontainer {
+  max-width: 600px;
+  margin: 50px auto;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-color: #FBFADA;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 0;
+}
+
+.button-80 {
+  background: #FBFADA;
+  backface-visibility: hidden;
+  border-radius: .375rem;
+  border-style: solid;
+  border-width: .125rem;
+  box-sizing: border-box;
+  color: #436850;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-color: #436850;
+  font-family: Circular, Helvetica, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  line-height: 1.3;
+  padding: .875rem 1.125rem;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transform: translateZ(0) scale(1);
+  transition: transform .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-80:not(:disabled):hover {
+  transform: scale(1.05);
+}
+
+.button-80:not(:disabled):hover:active {
+  transform: scale(1.05) translateY(.125rem);
+}
+
+.button-80:focus {
+  outline: 0 solid transparent;
+}
+
+.button-80:focus:before {
+  content: "";
+  left: calc(-1*.375rem);
+  pointer-events: none;
+  position: absolute;
+  top: calc(-1*.375rem);
+  transition: border-radius;
+  user-select: none;
+}
+
+.button-80:focus:not(:focus-visible) {
+  outline: 0 solid transparent;
+}
+
+.button-80:focus:not(:focus-visible):before {
+  border-width: 0;
+}
+
+.button-80:not(:disabled):active {
+  transform: translateY(.125rem);
+}
+
+.bubbles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -100px;
+  width: 40px;
+  height: 40px;
+  background: #f1f1f1;
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: rise 10s infinite ease-in;
+}
+
+.bubble:nth-child(1) {
+  width: 40px;
+  height: 40px;
+  left: 10%;
+  animation-duration: 8s;
+}
+
+.bubble:nth-child(2) {
+  width: 20px;
+  height: 20px;
+  left: 20%;
+  animation-duration: 5s;
+  animation-delay: 1s;
+}
+
+.bubble:nth-child(3) {
+  width: 50px;
+  height: 50px;
+  left: 35%;
+  animation-duration: 7s;
+  animation-delay: 2s;
+}
+
+@keyframes rise {
+  0% {
+      bottom: -100px;
+      transform: translateX(0);
+  }
+  50% {
+      transform: translate(100px);
+  }
+  100% {
+      bottom: 1080px;
+      transform: translateX(-200px);
+  }
+}
+
+.connecticon {
+  height: 50px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #FBFADA;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  transition: 0.2s;
+  padding-top: 60px;
+  -webkit-border-top-right-radius: 100px;
+/* -webkit-border-bottom-right-radius: 100px; */
+/* -moz-border-radius-topright: 100px; */
+/* -moz-border-radius-bottomright: 100px;
+border-top-right-radius: 100px;
+border-bottom-right-radius: 100px;  */
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #436850;
+  display: block;
+  transition: 0.2s;
+   margin-bottom: 100px; 
+   border-top: 100px; 
+   border-bottom: 100px; 
+  border-color: #436850;
+  
+  
+}
+
+.sidenav a:hover {
+  /* color: #ffffff; */
+  transform: scale(1.2);
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav { padding-top: 15px; }
+  .sidenav a { font-size: 18px; }
 }
 
 
-.hydro {
-    font-size: 36px;
-    margin-top: 20px;
-    color: #EEEEEE;
 
+
+.sidenav-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 999; /* Ensures it's above other elements */
 }
+
+.sidenav-button .button-80 {
+  background-color: #FBFADA;
+  color: #436850;
+  border-color: #436850;
+}
+
+.sidenav-button .button-80:hover {
+  background-color: #436850;
+  color: #FBFADA;
+}
+
